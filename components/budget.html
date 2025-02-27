@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="expense.html">Expense Tracker</a></li>
+            <li><a href="emi.html">EMI Calculator</a></li>
+            <li><a href="sip.html">SIP Calculator</a></li>
+        </ul>
+    </nav>
+
+    <h2>Budget Calculator</h2>
+    <label for="income">Monthly Income (₹):</label>
+    <input type="number" id="income" placeholder="Enter income">
+    
+    <label for="expenses">Total Expenses (₹):</label>
+    <input type="number" id="expenses" placeholder="Enter expenses">
+
+    <button onclick="calculateBudget()">Calculate</button>
+    
+    <p id="budgetResult"></p>
+
+    <script>
+        function calculateBudget() {
+            let income = parseFloat(document.getElementById("income").value);
+            let expenses = parseFloat(document.getElementById("expenses").value);
+            let balance = income - expenses;
+
+            document.getElementById("budgetResult").innerText = "Remaining Balance: ₹" + balance;
+        }
+    </script>
+</body>
+</html>
